@@ -1,8 +1,12 @@
 package org.example;
 
+import java.util.Random;
+
 public class Main {
 
     public static void main(String[] args) {
+
+        System.out.println(generateRandomPwd());
 
     }
 
@@ -114,6 +118,29 @@ public class Main {
         }
 
         return specialFound;
+    }
+
+    public static String generateRandomPwd(){
+
+        Random random = new Random();
+
+        String options =    "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +
+                            "abcdefghijklmnopqrstuvwxyz" +
+                            "1234567890" +
+                            "!?%§$()=+-,;.:_<>*#";
+        int length = random.nextInt(20);
+        String pwd = "";
+
+        do{
+            for(int i = 0; i < length; i++){
+
+                pwd += options.charAt(random.nextInt(options.length() -1));
+
+            }
+        }while (!isWeak(pwd) && hasDigits(pwd) && hasSpecialChar(pwd) &&
+                hasUpperAndLowerChar(pwd) && isMoreThanSeven(pwd));
+
+        return pwd;
     }
 
 }
