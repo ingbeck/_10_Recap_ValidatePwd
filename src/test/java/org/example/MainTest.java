@@ -18,5 +18,17 @@ class MainTest {
         assertTrue(actual);
     }
 
+    @Test
+    void hasDigits_whenP2hber9yIsPassed_thenReturnFalse(){
+        //GIVEN
+        String pwd = "P2hber9y";
+
+        //WHEN
+        boolean actual = Main.hasDigits(pwd);
+
+        //THEN
+        assertTrue(actual);
+    }
+
 
 }
