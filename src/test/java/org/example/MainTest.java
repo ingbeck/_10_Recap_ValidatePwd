@@ -55,6 +55,18 @@ class MainTest {
     }
 
     @Test
+    void isIncreasingNumber_whenInputIs567_thenReturnTrue(){
+        //GIVEN
+        String pwd = "567";
+
+        //WHEN
+        boolean actual = Main.hasIncreasdNumber(pwd);
+
+        //THEN
+        assertTrue(actual);
+    }
+
+    @Test
     void isWeak_whenPassword1IsPassed_thenReturnTrue(){
         //GIVEN
         String pwd = "Password1";

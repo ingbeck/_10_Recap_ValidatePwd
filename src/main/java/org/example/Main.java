@@ -44,10 +44,12 @@ public class Main {
     }
 
     public static boolean isWeak(String pwd){
+
         return isDoubleChar(pwd) || pwd.contains("Password");
     }
 
     public static boolean isDoubleChar(String pwd){
+
         String str = pwd.toLowerCase();
         boolean doubleFound = false;
 
@@ -58,6 +60,21 @@ public class Main {
         }
 
         return doubleFound;
+    }
+
+    public static boolean hasIncreasdNumber(String pwd){
+
+        boolean increasedFound = false;
+
+        if(hasDigits(pwd)){
+            for(int i = 1; i < pwd.length(); i++){
+                if((int) pwd.charAt(i) > (int) pwd.charAt(i-1)){
+                    increasedFound = true;
+                }
+            }
+        }
+
+        return increasedFound;
     }
 
 }
