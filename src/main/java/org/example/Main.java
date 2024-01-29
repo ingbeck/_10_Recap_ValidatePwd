@@ -1,7 +1,5 @@
 package org.example;
 
-import javax.swing.plaf.basic.BasicDesktopIconUI;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -45,7 +43,7 @@ public class Main {
 
     }
 
-    public static boolean isCommonlyUsed(String pwd){
+    public static boolean isWeak(String pwd){
         return isDoubleChar(pwd) || pwd.contains("Password");
     }
 

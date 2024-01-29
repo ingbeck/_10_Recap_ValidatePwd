@@ -55,12 +55,12 @@ class MainTest {
     }
 
     @Test
-    void isCommonlyUsed_whenPassword1IsPassed_thenReturnTrue(){
+    void isWeak_whenPassword1IsPassed_thenReturnTrue(){
         //GIVEN
         String pwd = "Password1";
 
         //WHEN
-        boolean actual = Main.isCommonlyUsed(pwd);
+        boolean actual = Main.isWeak(pwd);
 
         //THEN
         assertTrue(actual);
