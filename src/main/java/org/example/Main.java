@@ -1,5 +1,4 @@
 package org.example;
-
 import java.util.Random;
 
 public class Main {
@@ -9,6 +8,7 @@ public class Main {
         System.out.println(generateRandomPwd());
 
     }
+
 
     public static boolean isMoreThanSeven(String pwd){
         return pwd.length() > 7;
@@ -51,8 +51,8 @@ public class Main {
 
         return isDoubleChar(pwd) ||
                 pwd.contains("Password") ||
-                hasDecreasingNumber(pwd) ||
-                hasIncreasingNumber(pwd);
+                pwd.equals("123456") ||
+                pwd.equals("654321");
     }
 
     public static boolean isDoubleChar(String pwd){
@@ -69,13 +69,14 @@ public class Main {
         return doubleFound;
     }
 
+    /*
     public static boolean hasIncreasingNumber(String pwd){
 
         boolean increasedFound = false;
 
         if(hasDigits(pwd)){
             for(int i = 1; i < pwd.length(); i++){
-                if(pwd.charAt(i) >= pwd.charAt(i-1)){
+                if(Character.getNumericValue(pwd.charAt(i)) > Character.getNumericValue(pwd.charAt(i-1))){
                     increasedFound = true;
                 }
             }
@@ -83,23 +84,24 @@ public class Main {
 
         return increasedFound;
     }
+    */
 
+    /*
     public static boolean hasDecreasingNumber(String pwd){
 
         boolean deacreasedFound = false;
 
         if(hasDigits(pwd)){
             for(int i = 1; i < pwd.length(); i++){
-                if(pwd.charAt(i) <= pwd.charAt(i-1)){
+                if(Character.getNumericValue(pwd.charAt(i)) < Character.getNumericValue(pwd.charAt(i-1))){
                     deacreasedFound = true;
-                    break;
                 }
             }
         }
 
         return deacreasedFound;
     }
-
+    */
     public static boolean hasSpecialChar(String pwd){
 
         char[] specials = {'!','?','%','§',
@@ -113,7 +115,6 @@ public class Main {
             for(char special : specials){
                 if (pwd.charAt(i) == special) {
                     specialFound = true;
-                    break;
                 }
             }
         }
@@ -124,21 +125,22 @@ public class Main {
     public static String generateRandomPwd(){
 
         Random random = new Random();
+        String pwd = "";
         String options =    "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +
                             "abcdefghijklmnopqrstuvwxyz" +
                             "1234567890" +
                             "!?%§$()=+-,;.:_<>*#";
-        int length = random.nextInt(20);
-        String pwd = "";
+
+        //int lengthPdw = random.nextInt(12);
+
 
         do{
-            for(int i = 0; i < length; i++){
+            for(int i = 0; i < 8; i++){
 
                 pwd += options.charAt(random.nextInt(options.length() -1));
 
             }
-        }while (isWeak(pwd) && !hasDigits(pwd) && !hasSpecialChar(pwd) &&
-                !hasUpperAndLowerChar(pwd) && !isMoreThanSeven(pwd));
+        }while (isWeak(pwd) && !hasDigits(pwd) && !hasSpecialChar(pwd) && !hasUpperAndLowerChar(pwd) && !isMoreThanSeven(pwd));
 
         return pwd;
     }

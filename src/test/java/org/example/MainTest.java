@@ -71,6 +71,7 @@ class MainTest {
         //GIVEN
         String pwd = "765";
 
+
         //WHEN
         boolean actual = Main.hasDecreasingNumber(pwd);
 
@@ -138,5 +139,16 @@ class MainTest {
         assertTrue(actual);
     }
 
+    @Test
+    void isSafe_whenInputIs79Agh$rg_thenReturnTrue(){
+        //GIVEN
+        String pwd = "79Agh$rg";
+
+        //WHEN
+        boolean actual = Main.isSafe(pwd);
+
+        //THEN
+        assertTrue(actual);
+    }
 
 }
