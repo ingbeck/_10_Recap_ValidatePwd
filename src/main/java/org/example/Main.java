@@ -7,7 +7,9 @@ public class Main {
         System.out.println("Hello world!");
 
     }
-    
 
+    public static boolean isMoreThanSeven(String pwd){
+        return pwd.length() > 7;
+    }
 
 }
