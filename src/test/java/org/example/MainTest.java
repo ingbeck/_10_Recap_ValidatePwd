@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class MainTest {
 
     @Test
-    void isMoreThanSeven_whenP2hber9yIsPassed_thenReturnTrue(){
+    void isMoreThanSeven_whenInputIsP2hber9y_thenReturnTrue(){
         //GIVEN
         String pwd = "P2hber9y";
 
@@ -19,7 +19,7 @@ class MainTest {
     }
 
     @Test
-    void hasDigits_whenP2hber9yIsPassed_thenReturnTrue(){
+    void hasDigits_whenInputIsP2hber9y_thenReturnTrue(){
         //GIVEN
         String pwd = "P2hber9y";
 
@@ -31,7 +31,7 @@ class MainTest {
     }
 
     @Test
-    void hasUpperAndLowerChar_whenP2hber9yIsPassed_thenReturnTrue(){
+    void hasUpperAndLowerChar_whenInputIsP2hber9y_thenReturnTrue(){
         //GIVEN
         String pwd = "P2hber9y";
 
@@ -43,7 +43,7 @@ class MainTest {
     }
 
     @Test
-    void isDoubleChar_whenBbIsPassed_thenReturnTrue(){
+    void isDoubleChar_whenInputIsBb_thenReturnTrue(){
         //GIVEN
         String pwd = "Bb";
 
@@ -79,9 +79,21 @@ class MainTest {
     }
 
     @Test
-    void isWeak_whenPassword1IsPassed_thenReturnTrue(){
+    void isWeak_whenInputIsPassword1_thenReturnTrue(){
         //GIVEN
         String pwd = "Password1";
+
+        //WHEN
+        boolean actual = Main.isWeak(pwd);
+
+        //THEN
+        assertTrue(actual);
+    }
+
+    @Test
+    void isWeak_whenInputIs73Cc4_thenReturnTrue(){
+        //GIVEN
+        String pwd = "73Cc4";
 
         //WHEN
         boolean actual = Main.isWeak(pwd);
