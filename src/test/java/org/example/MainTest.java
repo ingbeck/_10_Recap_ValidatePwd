@@ -60,7 +60,19 @@ class MainTest {
         String pwd = "567";
 
         //WHEN
-        boolean actual = Main.hasIncreasdNumber(pwd);
+        boolean actual = Main.hasIncreasingNumber(pwd);
+
+        //THEN
+        assertTrue(actual);
+    }
+
+    @Test
+    void isDecreasingNumber_whenInputIs765_thenReturnTrue(){
+        //GIVEN
+        String pwd = "765";
+
+        //WHEN
+        boolean actual = Main.hasDecreasingNumber(pwd);
 
         //THEN
         assertTrue(actual);
@@ -70,6 +82,30 @@ class MainTest {
     void isWeak_whenPassword1IsPassed_thenReturnTrue(){
         //GIVEN
         String pwd = "Password1";
+
+        //WHEN
+        boolean actual = Main.isWeak(pwd);
+
+        //THEN
+        assertTrue(actual);
+    }
+
+    @Test
+    void isWeak_whenInputIsHallo123_thenReturnTrue(){
+        //GIVEN
+        String pwd = "Hallo123";
+
+        //WHEN
+        boolean actual = Main.isWeak(pwd);
+
+        //THEN
+        assertTrue(actual);
+    }
+
+    @Test
+    void isWeak_whenInputIsIn876beck_thenReturnTrue(){
+        //GIVEN
+        String pwd = "In876beck";
 
         //WHEN
         boolean actual = Main.isWeak(pwd);
