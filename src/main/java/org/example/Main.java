@@ -95,4 +95,25 @@ public class Main {
         return deacreasedFound;
     }
 
+    public static boolean hasSpecialChar(String pwd){
+
+        char[] specials = {'!','?','%','§',
+                '$','(',')','=','+',
+                '-',',',';',':','.',
+                '_','<','>','*','#'};
+
+        boolean specialFound = false;
+
+        for(int i = 0; i < pwd.length(); i++){
+            for(char special : specials){
+                if (pwd.charAt(i) == special) {
+                    specialFound = true;
+                    break;
+                }
+            }
+        }
+
+        return specialFound;
+    }
+
 }

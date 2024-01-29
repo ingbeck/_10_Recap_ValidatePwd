@@ -126,5 +126,16 @@ class MainTest {
         assertTrue(actual);
     }
 
+    @Test
+    void hasSpecialChar_whenInputIsPas$word_thenReturnTrue(){
+        //GIVEN
+        String pwd = "Pas$word";
+
+        //WHEN
+        boolean actual = Main.hasSpecialChar(pwd);
+
+        //THEN
+        assertTrue(actual);
+    }
 
 }
