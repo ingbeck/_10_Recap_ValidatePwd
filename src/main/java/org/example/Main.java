@@ -16,8 +16,11 @@ public class Main {
         boolean digitFound = false;
 
         for(int i = 0; i < pwd.length(); i++){
-            if(pwd.charAt(i) == digits[i]){
-                digitFound = true;
+            for(char digit : digits){
+                if (pwd.charAt(i) == digit) {
+                    digitFound = true;
+                    break;
+                }
             }
         }
         return digitFound;
@@ -39,5 +42,24 @@ public class Main {
         return upChar && lowChar;
 
     }
+
+    public static boolean isCommonlyUsed(String pwd){
+        return isDoubleChar(pwd) || pwd.contains("Password");
+    }
+
+    public static boolean isDoubleChar(String pwd){
+        String str = pwd.toLowerCase();
+        boolean doubleFound = false;
+
+        for(int i = 1; i < str.length(); i++){
+            if(str.charAt(i) == str.charAt(i-1)){
+                doubleFound = true;
+            }
+        }
+
+        return doubleFound;
+    }
+
+
 
 }

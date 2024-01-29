@@ -42,5 +42,29 @@ class MainTest {
         assertTrue(actual);
     }
 
+    @Test
+    void isDoubleChar_whenBbIsPassed_thenReturnTrue(){
+        //GIVEN
+        String pwd = "Bb";
+
+        //WHEN
+        boolean actual = Main.isDoubleChar(pwd);
+
+        //THEN
+        assertTrue(actual);
+    }
+
+    @Test
+    void isCommonlyUsed_whenPassword1IsPassed_thenReturnTrue(){
+        //GIVEN
+        String pwd = "Password1";
+
+        //WHEN
+        boolean actual = Main.isCommonlyUsed(pwd);
+
+        //THEN
+        assertTrue(actual);
+    }
+
 
 }
