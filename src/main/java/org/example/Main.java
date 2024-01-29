@@ -92,6 +92,7 @@ public class Main {
             for(int i = 1; i < pwd.length(); i++){
                 if(pwd.charAt(i) <= pwd.charAt(i-1)){
                     deacreasedFound = true;
+                    break;
                 }
             }
         }
@@ -123,7 +124,6 @@ public class Main {
     public static String generateRandomPwd(){
 
         Random random = new Random();
-
         String options =    "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +
                             "abcdefghijklmnopqrstuvwxyz" +
                             "1234567890" +
@@ -137,8 +137,8 @@ public class Main {
                 pwd += options.charAt(random.nextInt(options.length() -1));
 
             }
-        }while (!isWeak(pwd) && hasDigits(pwd) && hasSpecialChar(pwd) &&
-                hasUpperAndLowerChar(pwd) && isMoreThanSeven(pwd));
+        }while (isWeak(pwd) && !hasDigits(pwd) && !hasSpecialChar(pwd) &&
+                !hasUpperAndLowerChar(pwd) && !isMoreThanSeven(pwd));
 
         return pwd;
     }
