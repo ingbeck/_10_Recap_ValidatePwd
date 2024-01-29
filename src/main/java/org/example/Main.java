@@ -23,4 +23,21 @@ public class Main {
         return digitFound;
     }
 
+    public static boolean hasUpperAndLowerChar(String pwd){
+
+        boolean upChar = false;
+        boolean lowChar = false;
+
+        for(int i = 0; i < pwd.length(); i++){
+            if(Character.isUpperCase(pwd.charAt(i))){
+                upChar = true;
+            } else if (Character.isLowerCase(pwd.charAt(i))){
+                lowChar = true;
+            }
+        }
+
+        return upChar && lowChar;
+
+    }
+
 }
